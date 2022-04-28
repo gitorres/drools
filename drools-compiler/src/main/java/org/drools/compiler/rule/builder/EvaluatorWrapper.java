@@ -208,6 +208,6 @@ public class EvaluatorWrapper implements Evaluator {
 
     private static InternalFactHandle getFactHandle( Declaration declaration,
                                                     InternalFactHandle[] handles ) {
-        return handles[declaration.getObjectIndex()];
+        return handles != null && handles.length > declaration.getObjectIndex() ? handles[declaration.getObjectIndex()] : null;
     }
 }
